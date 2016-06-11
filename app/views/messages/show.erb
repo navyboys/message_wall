@@ -1,3 +1,4 @@
+<h2>Message Detail</h2>
 <p>
   Author: <%= @message.author %>
 </p>
@@ -7,5 +8,19 @@
     <a href="<%= @message.url %>">[link]</a>
   <% end %>
 </p>
+<p>
+  Created at: <%= @message.created_at %>
+</p>
+<hr/>
+<h2>Other Messages</h2>
+<% @other_messages.each do |message| %>
+    <p>
+      <%= message.content %>
+      @<%= message.created_at %>
+      <% unless message.url.empty? %>
+        <a href="<%= message.url %>">[link]</a>
+      <% end %>
+    </p>
+<% end %>
 <hr/>
 <a href="/messages">Back to All Messages</a>
