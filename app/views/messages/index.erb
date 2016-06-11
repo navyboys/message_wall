@@ -3,6 +3,9 @@
     <h3><a href="/messages/<%= message.id %>"> <small><%= message.author %></small></a></h3>
     <p>
       <%= message.content %>
+      <% unless message.url.empty? %>
+        <a href="<%= message.url %>">[link]</a>
+      <% end %>
     </p>
   </div>
 <% end %>

@@ -3,6 +3,9 @@
 </p>
 <p>
   <%= @message.content %>
+  <% unless @message.url.empty? %>
+    <a href="<%= @message.url %>">[link]</a>
+  <% end %>
 </p>
 <hr/>
 <a href="/messages">Back to All Messages</a>
